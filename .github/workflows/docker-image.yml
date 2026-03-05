@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: |
+      docker build -t react-docker .
+      docker stop react-docker || true
+      docker rm react-docker || true
+      docker run -p 80:5173 react-docker
+      dokcer image prune -f
