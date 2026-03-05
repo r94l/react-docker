@@ -7,7 +7,7 @@ FROM node:25-alpine
 # If the app is run as root, a malicious actor could potentially gain access to the entire system if they were able to exploit a vulnerability in the application. By running the app as a non-root user, we can limit the potential damage that could be caused by a security vulnerability in the application.
 
 
-RUN addgroup && adduser -S -G app app
+RUN addgroup -S app && adduser -S -G app app
 
 # Set the user to run the application.
 
