@@ -19,5 +19,6 @@ jobs:
         sudo docker stop react-docker || true
         sudo docker rm react-docker || true
         sudo docker build -t react-docker .
+        sleep 5
         sudo docker run -p 80:5173 react-docker
         sudo docker image prune -f
