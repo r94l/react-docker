@@ -16,8 +16,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run:  |
-        sudo docker build -t react-docker .
         sudo docker stop react-docker || true
         sudo docker rm react-docker || true
+        sudo docker build -t react-docker .
         sudo docker run -p 80:5173 react-docker
         sudo docker image prune -f
