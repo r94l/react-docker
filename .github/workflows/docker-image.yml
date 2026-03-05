@@ -20,4 +20,4 @@ jobs:
         docker stop react-docker || true
         docker rm react-docker || true
         docker run -p 80:5173 react-docker
-      dokcer image prune -f
+        docker image prune -f
