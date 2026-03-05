@@ -15,9 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: |
-      docker build -t react-docker .
-      docker stop react-docker || true
-      docker rm react-docker || true
-      docker run -p 80:5173 react-docker
+      run:  |
+        docker build -t react-docker .
+        docker stop react-docker || true
+        docker rm react-docker || true
+        docker run -p 80:5173 react-docker
       dokcer image prune -f
