@@ -1,5 +1,5 @@
 # set the base image to create the image for the react app.
-FROM node: alpine-20
+FROM node:alpine-20
 
 # Create a user with permissions to run the app.
 # -S flag is used to create a system user, and -G flag is used to specify the group for the user.
